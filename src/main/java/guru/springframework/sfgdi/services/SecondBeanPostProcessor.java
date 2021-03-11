@@ -6,8 +6,7 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CustomBeanPostProcessor implements BeanPostProcessor, BeanNameAware {
-
+public class SecondBeanPostProcessor implements BeanPostProcessor, BeanNameAware {
     private String beanName;
 
     @Override
