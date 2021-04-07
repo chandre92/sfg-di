@@ -71,14 +71,11 @@ public class GreetingServiceConfig {
     }
 
     @Bean
-    FakeDataSource fakeDataSource(
-            @Value("${guru.username}") String username,
-            @Value("${guru.password}") String password,
-            @Value("${guru.jdbcUrl}") String jdbcUrl) {
+    FakeDataSource fakeDataSource(SfgConfiguration configuration) {
         FakeDataSource fakeDataSource = new FakeDataSource();
-        fakeDataSource.setUserName(username);
-        fakeDataSource.setPassword(password);
-        fakeDataSource.setJdbcUrl(jdbcUrl);
+        fakeDataSource.setUserName(configuration.getUserName());
+        fakeDataSource.setPassword(configuration.getPassword());
+        fakeDataSource.setJdbcUrl(configuration.getJdbcUrl());
 
         return fakeDataSource;
     }
